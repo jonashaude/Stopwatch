@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F0D7CAE5223D107400DB4A31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7CAE4223D107400DB4A31 /* AppDelegate.swift */; };
-		F0D7CAE7223D107400DB4A31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7CAE6223D107400DB4A31 /* ViewController.swift */; };
+		F0D7CAE7223D107400DB4A31 /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7CAE6223D107400DB4A31 /* StopWatchViewController.swift */; };
 		F0D7CAE9223D107500DB4A31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0D7CAE8223D107500DB4A31 /* Assets.xcassets */; };
 		F0D7CAEC223D107500DB4A31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0D7CAEA223D107500DB4A31 /* Main.storyboard */; };
 		F0D7CAF8223D107500DB4A31 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7CAF7223D107500DB4A31 /* TimerTests.swift */; };
@@ -35,7 +35,7 @@
 /* Begin PBXFileReference section */
 		F0D7CAE1223D107400DB4A31 /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D7CAE4223D107400DB4A31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F0D7CAE6223D107400DB4A31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F0D7CAE6223D107400DB4A31 /* StopWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewController.swift; sourceTree = "<group>"; };
 		F0D7CAE8223D107500DB4A31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0D7CAEB223D107500DB4A31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0D7CAED223D107500DB4A31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				F0D7CAE4223D107400DB4A31 /* AppDelegate.swift */,
-				F0D7CAE6223D107400DB4A31 /* ViewController.swift */,
+				F0D7CAE6223D107400DB4A31 /* StopWatchViewController.swift */,
 				F0D7CAE8223D107500DB4A31 /* Assets.xcassets */,
 				F0D7CAEA223D107500DB4A31 /* Main.storyboard */,
 				F0D7CAED223D107500DB4A31 /* Info.plist */,
@@ -254,7 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0D7CAE7223D107400DB4A31 /* ViewController.swift in Sources */,
+				F0D7CAE7223D107400DB4A31 /* StopWatchViewController.swift in Sources */,
 				F0D7CAE5223D107400DB4A31 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
