@@ -1,6 +1,6 @@
 //
 //  StopWatchViewController.swift
-//  Timer
+//  Stopwatch
 //
 //  Created by Jonas Haude on 16.03.19.
 //  Copyright © 2019 Jonas Haude. All rights reserved.
@@ -8,12 +8,15 @@
 
 import Cocoa
 
-class StopWatchViewController: NSViewController {
 
-    
+class StopWatchViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
+
+    var dataForTable: [String] = []
     
     @IBOutlet weak var time: NSTextField!
     @IBOutlet weak var round: RoundButton!
+    @IBOutlet weak var table: NSTableView!
+    
     
     var stopWatch: StopWatch!
     /*
@@ -41,6 +44,8 @@ class StopWatchViewController: NSViewController {
     @IBAction func round(_ sender: RoundButton) {
         //Add Round
         if(sender.isRound){
+            dataForTable.append(stopWatch.timeString)
+            table.reloadData()
             
         //Reset the Watch
         }else{
@@ -51,18 +56,24 @@ class StopWatchViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        table.delegate = self
+        table.dataSource = self
         
         stopWatch = StopWatch(updateLabel: time)
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return dataForTable.count
     }
-
-
+    
+    func tableView(_ tableView: NSTableView, dataCellFor tableColumn: NSTableColumn?, row: Int) -> NSCell? {
+        let cell = NSCell(textCell: dataForTable[row])
+        print(cell.title)
+        cell.isEnabled = true
+        cell.isHighlighted = true
+        return cell
+        
+    }
 }
 
 class StartButton: NSButton{
@@ -111,6 +122,7 @@ class RoundButton: NSButton{
 class StopWatch{
     var isRunning: Bool
     var time: Double
+    var timeString: String!
     private var timer: Timer!
     private var timeLabel: NSTextField
     
@@ -124,7 +136,11 @@ class StopWatch{
         Starts the StopWatch
     */
     func start(){
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
+        
+        DispatchQueue.main.async {
+            self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.UpdateTimer), userInfo: nil, repeats: true)
+        }
+        
         isRunning = true
     }
     
@@ -156,6 +172,7 @@ class StopWatch{
         let formatter = DateFormatter()
         formatter.dateFormat = "mm:ss,SS"
         
+        timeString = formatter.string(from: Date(timeIntervalSince1970: TimeInterval(exactly: time)!))
         timeLabel.stringValue = formatter.string(from: Date(timeIntervalSince1970: TimeInterval(exactly: time)!))
     }
     

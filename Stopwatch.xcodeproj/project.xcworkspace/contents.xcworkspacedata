@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Timer.xcodeproj">
+      location = "self:/Users/jonashaude/Desktop/Apps/In Development/Timer/Stopwatch.xcodeproj">
    </FileRef>
 </Workspace>

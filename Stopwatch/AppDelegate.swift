@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Timer
+//  Stopwatch
 //
 //  Created by Jonas Haude on 16.03.19.
 //  Copyright © 2019 Jonas Haude. All rights reserved.
